@@ -37,9 +37,11 @@
 ### Ответ
 
 Пример команды для создания резервной копии базы данных в PostgreSQL с помощью утилиты pg_dump:
+
 pg_dump -U <username> -d <database_name> -F c -f backup_file.dump
 
 Пример команды для восстановления базы данных из резервной копии с помощью утилиты pg_restore:
+
 pg_restore -U <username> -d <database_name> backup_file.dump
 
 ВАЖНО, чтобы перед выполнением команд необходимо убедиться, что утилиты pg_dump и pg_restore доступны в системе и находятся в переменной PATH
@@ -53,6 +55,7 @@ pg_restore -U <username> -d <database_name> backup_file.dump
 Для создания инкрементной резервной копии базы данных MySQL можно использовать утилиту mysqldump с параметром --single-transaction. Этот параметр позволяет создавать копию базы данных в режиме транзакции, что обеспечивает целостность данных и позволяет избежать блокировки таблиц при создании копии.
 
 Пример команды для создания инкрементной резервной копии базы данных MySQL:
+
 mysqldump --single-transaction --flush-logs --master-data=2 -u <username> -p <database_name> > backup_file.sql
 
 где:
